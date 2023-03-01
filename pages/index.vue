@@ -76,9 +76,7 @@
             >
           </li>
           <li>
-            <a
-              href="mailto:info@jolafun.be"
-              class="icon solid fa-envelope is-clickable"
+            <a href="mailto:info@jolafun.be" class="icon solid fa-envelope is-clickable"
               ><span class="label">E-mail</span></a
             >
           </li>
@@ -93,7 +91,6 @@
         <!-- One -->
         <section id="home">
           <div class="image main" data-position="center">
-            
             <img src="~/assets/images/cover-desktop.png" alt="" />
           </div>
           <div class="container">
@@ -190,8 +187,8 @@
               <Item title="Ringwerpen" :price="15" image="ringwerpen-1.jpeg" />
             </div>
             <p class="is-italic">
-              Levering van de reuzespelen is mogelijk in combinatie met een
-              springkasteel. Voor afhalen kan je steeds bellen.
+              Levering van de reuzespelen is mogelijk in combinatie met een springkasteel.
+              Voor afhalen kan je steeds bellen.
             </p>
           </div>
         </section>
@@ -211,19 +208,11 @@
       >
         <b-carousel-item v-for="(item, i) in galleryToShow.items" :key="i">
           <figure class="image">
-            <img
-              :src="
-                require(`~/assets/images/${galleryToShow.folder}/${item}.webp`)
-              "
-            />
+            <img :src="require(`~/assets/images/${galleryToShow.folder}/${item}.webp`)" />
             <!-- <img :src="item.image"> -->
           </figure>
         </b-carousel-item>
-        <span
-          v-if="gallery"
-          @click="switchGallery(false)"
-          class="modal-close is-large"
-        />
+        <span v-if="gallery" @click="switchGallery(false)" class="modal-close is-large" />
         <template #list="props">
           <b-carousel-list
             v-model="props.active"
@@ -236,11 +225,7 @@
     </b-modal>
 
     <div id="titleBar">
-      <a
-        href="#header"
-        class="toggle"
-        @click="headerVisible = !headerVisible"
-      ></a
+      <a href="#header" class="toggle" @click="headerVisible = !headerVisible"></a
       ><span class="title"><a href="#">JOLAFUN</a></span>
     </div>
   </div>
@@ -261,10 +246,10 @@ export default {
       },
       link: [
         {
-          rel: 'canonical',
-          href: 'https://www.jolafun.be'
-        }
-      ]
+          rel: "canonical",
+          href: "https://www.jolafun.be",
+        },
+      ],
     };
   },
   beforeMount() {
@@ -299,19 +284,12 @@ export default {
         },
         {
           folder: "kamiel",
-          items: [
-            "kamiel-1",
-            "kamiel-2",
-            "kamiel-3",
-            "kamiel-4",
-            "kamiel-5",
-            "kamiel-6",
-          ],
+          items: ["kamiel-1", "kamiel-2", "kamiel-3", "kamiel-4", "kamiel-5", "kamiel-6"],
         },
         {
           folder: "fred",
-          items: ["fred-1", "fred-2", "fred-3"],
-        }
+          items: ["fred-1", "fred-2", "fred-3", "fred-4", "fred-5"],
+        },
       ],
     };
   },
