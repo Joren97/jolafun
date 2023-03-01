@@ -27,3 +27,4 @@ jobs:
           username: ftp_jolafun.be
           password: ${{ secrets.JOLAFUN_FTP_PASSWORD }}
           server-dir: /web/
+          local-dir: dist/

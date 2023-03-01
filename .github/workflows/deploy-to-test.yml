@@ -30,3 +30,4 @@ jobs:
           username: ftp_jorensynaeve.be
           password: ${{ secrets.JORENSYNAEVEVE_FTP_PASSWORD }}
           server-dir: /web/projects/jolafun/
+          local-dir: dist/
