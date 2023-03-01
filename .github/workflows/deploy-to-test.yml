@@ -28,5 +28,5 @@ jobs:
         with:
           server: ftp.jorensynaeve.be
           username: ftp_jorensynaeve.be
-          password: ${{ secrets.JORENSYNAEVEBE_FTP_PASSWORD }}
+          password: ${{ secrets.JORENSYNAEVEVE_FTP_PASSWORD }}
           server-dir: /web/projects/jolafun/
