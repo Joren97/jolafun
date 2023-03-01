@@ -1,0 +1,32 @@
+{
+  "name": "jolafun",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "cross-env NODE_ENV=prod nuxt generate",
+    "generate-test": "cross-env NODE_ENV=test nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/recaptcha": "^1.0.4",
+    "aos": "^2.3.4",
+    "core-js": "^3.15.1",
+    "sass": "^1.48.0",
+    "sass-loader": "^10.1.1",
+    "nuxt": "^2.15.7",
+    "nuxt-buefy": "^0.4.8",
+    "vue2-smooth-scroll": "^1.5.1"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@nuxt/types": "^2.15.7",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@types/sass-loader": "^8.0.2",
+    "cross-env": "^7.0.3"
+  }
+}
