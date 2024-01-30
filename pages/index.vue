@@ -149,6 +149,13 @@
               >
                 <p>Afmetingen: 6m x 7m<br />Huurprijs: &euro; 120 per dag</p>
               </Item>
+              <Item
+                title="Tito de clown"
+                image="clown/clown-1.webp"
+                @showGallery="showGallery('clown')"
+              >
+                <p>Afmetingen: 5m x 5,5m<br />Huurprijs: &euro; 125 per dag</p>
+              </Item>
               <!-- <article>
                 <div class="image">
                   <img src="~/assets/images/blurred.webp" alt="" />
@@ -289,6 +296,10 @@ export default {
         {
           folder: "fred",
           items: ["fred-1", "fred-2", "fred-3", "fred-4", "fred-5"],
+        },
+        {
+          folder: "clown",
+          items: ["clown-1", "clown-2", "clown-3", "clown-4", "clown-5", "clown-6"],
         },
       ],
     };
