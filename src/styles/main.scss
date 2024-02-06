@@ -14,3 +14,25 @@ body {
   height: 20px;
   width: 20px;
 }
+
+.drawer {
+  ul {
+    li {
+      border-top: 2px solid #ef8e2c;
+      display: block;
+      width: 100%;
+      text-align: center;
+      a {
+        border: 0;
+        color: white;
+        display: block;
+        padding: 0.85em 0;
+
+        &.active {
+          background-color: white;
+          color: #ef8e2c;
+        }
+      }
+    }
+  }
+}
