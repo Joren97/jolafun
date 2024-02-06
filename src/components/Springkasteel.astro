@@ -33,33 +33,37 @@ if (!allImages[imagePath])
   throw new Error(
     `"${imagePath}" does not exist in glob: "src/images/*.{jpeg,jpg,png,gif,webp}"`
   );
-
-const gallery = `gallery-${name}`;
+const galleryName = name.replace(/ /g, "-").toLowerCase();
+const gallery = `gallery-${galleryName}`;
 ---
 
-<div>
-  <a data-fslightbox={gallery} href={imagePath}>
-    <Image
-      src={allImages[imagePath]()}
-      alt={altText}
-      class="rounded-lg mb-4"
-    /></a
-  >
-  {
-    images.map((path) => {
-      return (
-        <a data-fslightbox={gallery} href={path} class="hidden">
-          <Image
-            src={allImages[path]()}
-            alt={altText}
-            class="rounded-lg mb-4"
-          />
-        </a>
-      );
-    })
-  }
-  <p class="text-xl font-bold">{name}</p>
-  <p>Afmetingen: {width}m x {length}m</p>
-  <p>Huurprijs: &euro; {price} per dag</p>
-  <p>{extra}</p>
+<div class="flex flex-col lg:flex-row lg:items-center">
+  <div class="lg:w-1/2">
+    <a data-fslightbox={gallery} href={imagePath}>
+      <Image
+        src={allImages[imagePath]()}
+        alt={altText}
+        class="rounded-lg mb-4"
+      /></a
+    >
+    {
+      images.map((path) => {
+        return (
+          <a data-fslightbox={gallery} href={path} class="hidden">
+            <Image
+              src={allImages[path]()}
+              alt={altText}
+              class="rounded-lg mb-4"
+            />
+          </a>
+        );
+      })
+    }
+  </div>
+  <div class="lg:ml-8">
+    <p class="text-neutral text-xl lg:text-3xl font-bold">{name}</p>
+    <p class="text-neutral lg:text-xl">Afmetingen: {width}m x {length}m</p>
+    <p class="text-neutral lg:text-xl">Huurprijs: &euro; {price} per dag</p>
+    <p class="text-neutral lg:text-xl">{extra}</p>
+  </div>
 </div>
