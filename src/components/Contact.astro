@@ -34,28 +34,39 @@
         <span class="underline text-neutral">info@jolafun.be</span>
       </a>
     </div>
-    <form action="">
+    <form>
       <div class="flex flex-col gap-4">
         <div class="flex flex-row gap-4">
           <input
             type="text"
+            name="your-name"
             placeholder="Naam"
             class="input input-bordered input-md w-full"
           />
           <input
             type="text"
+            name="your-email"
             placeholder="E-mail"
             class="input input-bordered input-md w-full"
           />
         </div>
-        <textarea class="textarea textarea-bordered" placeholder="Bio"
-        ></textarea>
+        <textarea
+          class="textarea textarea-bordered"
+          placeholder="Bio"
+          name="your-message"></textarea>
 
-        <div class="flex gap-4">
-          <button class="btn btn-primary text-white">Verzenden</button>
-          <button class="btn btn-neutral text-white">Leegmaken</button>
+        <div class="flex gap-4 items-center">
+          <button class="btn btn-primary text-white" data-action="submit"
+            >Verzenden</button
+          >
+          <button class="btn btn-neutral text-white" data-action="empty"
+            >Leegmaken</button
+          >
+          <span id="feedback"></span>
         </div>
       </div>
     </form>
   </div>
 </section>
+
+<script src="../scripts/form.ts"></script>
