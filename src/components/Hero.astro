@@ -5,16 +5,41 @@
   }
 </style>
 
-<div class="hero min-h-96">
+<div class="mobile-navbar bg-gray-900 text-white lg:hidden">
+  <div class="container mx-auto px-4 flex justify-between p-3">
+    <p class="uppercase">Jolafun</p>
+    <label for="nav-drawer">
+      <!-- Hamburger icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        class="h-6 w-6 text-white"
+        fill="currentColor"
+        ><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+        ></path></svg
+      >
+    </label>
+  </div>
+</div>
+
+<div class="hero min-h-96 mb-8">
   <div class="hero-content text-center text-neutral-content"></div>
 </div>
 
-<div class="container mx-auto">
-  <h1 class="uppercase text-6xl">Jolafun</h1>
-  <h2 class="text-3xl">Verhuur van springkastelen &amp; reuzespelen</h2>
-  <div class="flex flex-row">
-    <div class="flex flex-row items-center">
-      <button class="btn btn-circle me-4 bg-primary text-white border-primary">
+<div class="container mx-auto px-8 flex flex-col lg:my-24 gap-2 lg:gap-4">
+  <h1
+    class="uppercase text-5xl lg:text-7xl font-bold text-primary tracking-wider"
+  >
+    Jolafun
+  </h1>
+  <h2 class="text-2xl lg:text-4xl text-neutral font-bold">
+    Verhuur van springkastelen &amp; reuzespelen
+  </h2>
+  <div class="flex flex-col md:flex-row mt-4 gap-4">
+    <a class="flex flex-row items-center gap-4" href="tel:+32477066254">
+      <div class="btn btn-circle bg-primary text-white border-primary">
         <svg
           class="h-6 w-6"
           fill="currentColor"
@@ -25,11 +50,12 @@
             d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
           ></path></svg
         >
-      </button>
-      <a href="tel:+32477066254">0477 06 62 54</a>
-    </div>
-    <div class="flex flex-row items-center">
-      <button class="btn btn-circle me-4 bg-primary text-white">
+      </div>
+      <span class="underline text-neutral">0477 06 62 54</span></a
+    >
+
+    <a class="flex flex-row items-center gap-4" href="mailto:info@jolafun.be">
+      <div class="btn btn-circle bg-primary text-white">
         <svg
           class="h-6 w-6"
           fill="currentColor"
@@ -37,11 +63,11 @@
           viewBox="0 0 512 512"
           ><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
           <path
-            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+            d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
           ></path></svg
         >
-      </button>
-      <a href="tel:+32477066254">0477 06 62 54</a>
-    </div>
+      </div>
+      <span class="underline text-neutral">info@jolafun.be</span>
+    </a>
   </div>
 </div>
