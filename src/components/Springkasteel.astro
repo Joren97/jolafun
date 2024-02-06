@@ -9,24 +9,57 @@ interface Props {
   width: string;
   length: string;
   price: string;
+  extra?: string;
+  images: Array<string>;
 }
 
-const { imagePath, altText, name, width, length, price } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>(
+const {
+  imagePath,
+  altText,
+  name,
+  width,
+  length,
+  price,
+  extra,
+  images = [],
+} = Astro.props;
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/springkastelen/*.{jpeg,jpg,png,gif,webp}"
 );
 
 console.log(images);
 
-if (!images[imagePath])
+if (!allImages[imagePath])
   throw new Error(
     `"${imagePath}" does not exist in glob: "src/images/*.{jpeg,jpg,png,gif,webp}"`
   );
+
+const gallery = `gallery-${name}`;
 ---
 
 <div>
-  <Image src={images[imagePath]()} alt={altText} class="rounded-lg mb-4" />
+  <a data-fslightbox={gallery} href={imagePath}>
+    <Image
+      src={allImages[imagePath]()}
+      alt={altText}
+      class="rounded-lg mb-4"
+    /></a
+  >
+  {
+    images.map((path) => {
+      return (
+        <a data-fslightbox={gallery} href={path} class="hidden">
+          <Image
+            src={allImages[path]()}
+            alt={altText}
+            class="rounded-lg mb-4"
+          />
+        </a>
+      );
+    })
+  }
   <p class="text-xl font-bold">{name}</p>
   <p>Afmetingen: {width}m x {length}m</p>
   <p>Huurprijs: &euro; {price} per dag</p>
+  <p>{extra}</p>
 </div>

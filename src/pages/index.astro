@@ -9,8 +9,8 @@ import Springkasteel from "../components/Springkasteel.astro";
 <Layout title="Verhuur van springkastelen">
   <Hero />
   <div class="divider"></div>
-  <div class="container mx-auto">
-    <h3>Onze springkastelen</h3>
+  <div class="container mx-auto px-8">
+    <h3 class="text-3xl mb-4">Onze springkastelen</h3>
     <Springkasteel
       imagePath="/src/images/springkastelen/fred-1.webp"
       name="Fred"
@@ -18,7 +18,15 @@ import Springkasteel from "../components/Springkasteel.astro";
       width="3,5"
       length="4,5"
       price="90"
+      extra="Optie: babyborrel (zie foto's)"
+      images={[
+        "/src/images/springkastelen/fred-2.webp",
+        "/src/images/springkastelen/fred-3.webp",
+        "/src/images/springkastelen/fred-4.webp",
+        "/src/images/springkastelen/fred-5.webp",
+      ]}
     />
+    <div class="divider"></div>
   </div>
   <Footer />
 </Layout>
