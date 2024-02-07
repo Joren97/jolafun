@@ -16,8 +16,6 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/reuzespelen/*.{jpeg,jpg,png,gif,webp}"
 );
 
-console.log(images);
-
 if (!allImages[imagePath])
   throw new Error(
     `"${imagePath}" does not exist in glob: "src/images/*.{jpeg,jpg,png,gif,webp}"`
