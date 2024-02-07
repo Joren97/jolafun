@@ -35,7 +35,7 @@ const { title } = Astro.props;
         <div
           class="w-80 min-h-full text-base-content bg-primary flex flex-col items-center gap-4 lg:gap-8"
         >
-          <Image src={logo} alt="Logo" class="mt-4 h-32 lg:h-48" />
+          <Image src={logo} alt="Logo" class="mt-16 h-32 lg:h-48" />
           <p class="uppercase text-white text-3xl font-bold">Jolafun</p>
           <div class="text-white text-lg">
             <p><a href="mailto:info@jolafun.be">info@jolafun.be</a></p>
@@ -44,19 +44,21 @@ const { title } = Astro.props;
           <div class="w-full flex flex-col flex-1 justify-between">
             <ul class="flex flex-col items-center w-full">
               <li>
-                <a href="#home" class="active">Home</a>
+                <a href="#home" class="active scrollLink">Home</a>
               </li>
               <li>
-                <a href="#springkastelen">Springkastelen</a>
+                <a href="#springkastelen" class="scrollLink">Springkastelen</a>
               </li>
               <li>
-                <a href="#reuzespelen">Reuzespelen</a>
+                <a href="#reuzespelen" class="scrollLink">Reuzespelen</a>
               </li>
               <li>
-                <a href="https://figofun.be">Gekke fietsen</a>
+                <a href="https://figofun.be" target="_blank" rel="noreferrer"
+                  >Gekke fietsen</a
+                >
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact" class="scrollLink">Contact</a>
               </li>
             </ul>
             <div class="socials flex justify-center gap-8 mb-8">
@@ -96,6 +98,7 @@ const { title } = Astro.props;
       </div>
 
       <script src="../scripts/fslightbox/fslightbox.js"></script>
+      <script src="../scripts/smoothScroll.ts"></script>
     </div>
   </body>
 </html>
