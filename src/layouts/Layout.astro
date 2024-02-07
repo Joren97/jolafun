@@ -18,17 +18,12 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Jolafun - {title}</title>
   </head>
   <body>
     <div class="drawer lg:drawer-open">
       <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
-        <!-- Page content here -->
-        <!-- <label for="nav-drawer" class="btn btn-primary drawer-button lg:hidden"
-          >Open drawer</label
-        > -->
-
         <slot />
       </div>
       <div class="drawer-side">
@@ -55,13 +50,13 @@ const { title } = Astro.props;
                 <a href="#springkastelen">Springkastelen</a>
               </li>
               <li>
-                <a href="#reuzespelen">Springkastelen</a>
+                <a href="#reuzespelen">Reuzespelen</a>
               </li>
               <li>
                 <a href="https://figofun.be">Gekke fietsen</a>
               </li>
               <li>
-                <a href="Contact">Contact</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
             <div class="socials flex justify-center gap-8 mb-8">
