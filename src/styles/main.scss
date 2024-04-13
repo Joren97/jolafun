@@ -1,3 +1,5 @@
+@import "libs/_vars";
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -10,7 +12,7 @@ body {
 .drawer {
   ul {
     li {
-      border-top: 2px solid #ef8e2c;
+      border-top: 2px solid $orange;
       display: block;
       width: 100%;
       text-align: center;
@@ -22,7 +24,8 @@ body {
 
         &.active {
           background-color: white;
-          color: #ef8e2c;
+          color: $orange;
+          border-right: 1px solid $orange;
         }
       }
     }
