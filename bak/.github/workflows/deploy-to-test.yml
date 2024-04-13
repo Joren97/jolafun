@@ -1,0 +1,33 @@
+name: TEST - Build and deploy frontend
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-frontend:
+    name: 🛠 Build and upload frontend to test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: latest
+
+      - run: pnpm install --shamefully-hoist
+
+      - run: pnpm generate-test
+
+      - name: 📂 Upload files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ftp.jorensynaeve.be
+          username: ftp_jorensynaeve.be
+          password: ${{ secrets.JORENSYNAEVEVE_FTP_PASSWORD }}
+          server-dir: /web/projects/jolafun/
+          local-dir: dist/

@@ -1,0 +1,30 @@
+name: PROD - Build and deploy frontend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-frontend:
+    name: 🛠 Build and upload frontend to prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: latest
+
+      - run: pnpm install --shamefully-hoist
+
+      - run: pnpm generate
+
+      - name: 📂 Upload files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ftp.jolafun.be
+          username: ftp_jolafun.be
+          password: ${{ secrets.JOLAFUN_FTP_PASSWORD }}
+          server-dir: /web/
+          local-dir: dist/

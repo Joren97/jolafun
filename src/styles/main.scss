@@ -1,0 +1,33 @@
+@import "libs/_vars";
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.fa-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.drawer {
+  ul {
+    li {
+      border-top: 2px solid $orange;
+      display: block;
+      width: 100%;
+      text-align: center;
+      a {
+        border: 0;
+        color: white;
+        display: block;
+        padding: 0.85em 0;
+
+        &.active {
+          background-color: white;
+          color: $orange;
+          border-right: 1px solid $orange;
+        }
+      }
+    }
+  }
+}

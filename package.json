@@ -1,32 +1,25 @@
 {
   "name": "jolafun",
-  "version": "1.0.0",
-  "private": true,
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "cross-env NODE_ENV=prod nuxt generate",
-    "generate-test": "cross-env NODE_ENV=test nuxt generate"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.6",
-    "@nuxtjs/pwa": "^3.3.5",
-    "@nuxtjs/recaptcha": "^1.0.4",
-    "aos": "^2.3.4",
-    "core-js": "^3.15.1",
-    "sass": "^1.48.0",
-    "sass-loader": "^10.1.1",
-    "nuxt": "^2.15.7",
-    "nuxt-buefy": "^0.4.8",
-    "vue2-smooth-scroll": "^1.5.1"
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.2.6",
+    "flowbite": "^2.2.1",
+    "sass": "^1.70.0",
+    "sharp": "^0.33.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@nuxt/types": "^2.15.7",
-    "@nuxtjs/fontawesome": "^1.1.2",
-    "@types/sass-loader": "^8.0.2",
-    "cross-env": "^7.0.3"
+    "daisyui": "^4.6.1"
   }
 }
