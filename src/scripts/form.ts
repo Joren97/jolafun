@@ -55,7 +55,7 @@ if (form) {
                     setFeedback(message, "success");
                     form.reset();
                 } else if (status === INVALID) {
-                    setFeedback(validationError[0].message, "error");
+                    setFeedback(validationError, "error");
                 }
 
             } catch (error) {
