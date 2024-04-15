@@ -1,5 +1,5 @@
-const MAIL_SENT = 'mail_sent';
-const INVALID = 'validation_failed';
+const MAIL_SENT = 'success';
+const INVALID = 'error';
 
 const setFeedback = (message: string, classname: string) => {
     const feedbackEl = document.querySelector("#feedback")! as HTMLDivElement;
@@ -41,7 +41,7 @@ if (form) {
                 formdata.append("your-message", messageVal);
 
                 const res = await fetch(
-                    "https://jolafun.be/wp-json/contact-form-7/v1/contact-forms/5/feedback",
+                    "https://jolafun.be/form.php",
                     {
                         method: "POST",
                         body: formdata,
@@ -49,13 +49,13 @@ if (form) {
                 );
 
                 const json = await res.json();
-                const { status, message, invalid_fields } = json;
+                const { status, message, validationError } = json;
 
                 if (status === MAIL_SENT) {
                     setFeedback(message, "success");
                     form.reset();
                 } else if (status === INVALID) {
-                    setFeedback(invalid_fields[0].message, "error");
+                    setFeedback(validationError[0].message, "error");
                 }
 
             } catch (error) {
