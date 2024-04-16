@@ -2,15 +2,14 @@
 import "../styles/main.scss";
 import { Image } from "astro:assets";
 import logo from "../images/logo.svg";
+import NavigationList from "../components/NavigationList.astro";
 
 interface Props {
   title: string;
+  activePage: string;
 }
 
-const { title } = Astro.props;
-
-const site = Astro.site;
-console.log(site);
+const { title, activePage } = Astro.props;
 
 let faviconPath = import.meta.env.BASE_URL + "favicon.svg";
 const fontPath = import.meta.env.BASE_URL + "fonts/";
@@ -73,25 +72,7 @@ const fontPath = import.meta.env.BASE_URL + "fonts/";
             <p><a href="mailto:info@jolafun.be">0477 06 62 54</a></p>
           </div>
           <div class="w-full flex flex-col flex-1 justify-between">
-            <ul class="flex flex-col items-center w-full">
-              <li>
-                <a href="#home" class="active scrollLink">Home</a>
-              </li>
-              <li>
-                <a href="#springkastelen" class="scrollLink">Springkastelen</a>
-              </li>
-              <li>
-                <a href="#reuzespelen" class="scrollLink">Reuzespelen</a>
-              </li>
-              <li>
-                <a href="https://figofun.be" target="_blank" rel="noreferrer"
-                  >Gekke fietsen</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="scrollLink">Contact</a>
-              </li>
-            </ul>
+            <NavigationList activePage={activePage} />
             <div class="socials flex justify-center gap-8 mb-8">
               <a
                 href="https://www.facebook.com/jolafun.be"

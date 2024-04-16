@@ -1,0 +1,68 @@
+---
+interface Props {
+  activePage: string;
+}
+
+const { activePage } = Astro.props;
+
+const isIndex = activePage === "index";
+const isVerhuurvoorwaarden = activePage === "verhuurvoorwaarden";
+---
+
+<ul id="sidebar" class="flex flex-col items-center w-full">
+  <li>
+    {
+      isIndex ? (
+        <a href="#home" class:list={[isIndex ? "scroll-link" : ""]}>
+          Home
+        </a>
+      ) : (
+        <a href="/">Home</a>
+      )
+    }
+  </li>
+  <li>
+    {
+      isIndex ? (
+        <a href="#springkastelen" class:list={[isIndex ? "scroll-link" : ""]}>
+          Springkastelen
+        </a>
+      ) : (
+        <a href="/#springkastelen">Springkastelen</a>
+      )
+    }
+  </li>
+  <li>
+    {
+      isIndex ? (
+        <a href="#reuzespelen" class:list={[isIndex ? "scroll-link" : ""]}>
+          Reuzespelen
+        </a>
+      ) : (
+        <a href="/#reuzespelen">Reuzespelen</a>
+      )
+    }
+  </li>
+  <li>
+    <a href="https://figofun.be" target="_blank" rel="noreferrer"
+      >Gekke fietsen</a
+    >
+  </li>
+  <li>
+    {
+      isIndex ? (
+        <a href="#contact" class:list={[isIndex ? "scroll-link" : ""]}>
+          Contact
+        </a>
+      ) : (
+        <a href="/#contact">Contact</a>
+      )
+    }
+  </li>
+  <li>
+    <a
+      href="/verhuurvoorwaarden"
+      class:list={isVerhuurvoorwaarden ? "active" : ""}>Verhuurvoorwaarden</a
+    >
+  </li>
+</ul>
